@@ -55,3 +55,32 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+def print_single_table(num):
+    if num <= 0:
+        print("Error: The number must be a positive integer.")
+        return
+
+    print(f"\nMultiplication Table for {num}:")
+    for i in range(1, 13):
+        print(f"{num}  x  {i:<2} =  {num * i}")
+
+
+def print_multiple_tables(n):
+    
+    if n <= 0:
+        print("Error: The number N must be a positive integer.")
+        return
+
+    for current_num in range(1, n + 1):
+        print_single_table(current_num)
+        
+        if current_num < n:
+            print("---------------------------")
+
+print("=== PART A: SINGLE TABLE ===")
+single_num = int(input("Enter a number: "))
+print_single_table(single_num)
+
+print("\n=== PART B: TABLES FROM 1 TO N ===")
+max_n = int(input("Enter a number N: "))
+print_multiple_tables(max_n)
